@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101e24">
+<title>World Drive 2D</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="game" aria-label="Top-down driving world">
+</canvas>
+<div id="loading">WORLD DRIVE 2D<br>
+<small>Loading…</small>
+</div>
+<div id="hud" hidden>
+<div class="top">
+<div class="pill">
+<b id="region">Central City</b>
+<small id="sky">
+</small>
+</div>
+<div class="tools">
+<button data-panel="map">Map M</button>
+<button data-panel="garage">Garage G</button>
+<button data-panel="pause">Pause P</button>
+</div>
+</div>
+<div class="mission pill">
+<span id="missionText">
+</span>
+</div>
+<canvas id="mini" width="160" height="160" aria-label="Nearby roads and player minimap">
+</canvas>
+<div class="gauges pill">
+<strong id="speed">0</strong>
+<span>km/h</span>
+<div id="stats">
+</div>
+</div>
+</div>
+<div id="touch" hidden>
+<div class="steer">
+<button data-key="left" aria-label="Steer left">◀</button>
+<button data-key="right" aria-label="Steer right">▶</button>
+</div>
+<div class="pedals">
+<button data-key="horn" aria-label="Horn">HORN</button>
+<button data-key="handbrake">DRIFT</button>
+<button data-key="brake">BRAKE<br>REVERSE</button>
+<button data-key="gas">GO</button>
+</div>
+</div>
+<div id="toast" role="status">
+</div>
+<dialog id="menu">
+<div class="menu-inner">
+<p class="eyebrow">AN ORIGINAL OPEN-ROAD ADVENTURE</p>
+<h1>WORLD<br>
+<em>DRIVE 2D</em>
+</h1>
+<p>Thirty districts. Seventeen rides.<br>One road trip that is yours.</p>
+<button id="play" class="primary">PLAY / NEW GAME</button>
+<button id="continue">CONTINUE</button>
+<div class="row">
+<button data-panel="garage">GARAGE</button>
+<button data-panel="settings">SETTINGS</button>
+<button data-panel="controls">HOW TO PLAY</button>
+</div>
+<small>World Drive 2D · No accounts. No purchases.</small>
+</div>
+</dialog>
+<dialog id="panel">
+<header>
+<h2 id="panelTitle">
+</h2>
+<button id="closePanel" aria-label="Close panel">✕</button>
+</header>
+<div id="panelBody">
+</div>
+</dialog>
+<script defer src="js/vehicles.js">
+</script>
+<script defer src="js/world.js">
+</script>
+<script defer src="js/player.js">
+</script>
+<script defer src="js/traffic.js">
+</script>
+<script defer src="js/dayNight.js">
+</script>
+<script defer src="js/weather.js">
+</script>
+<script defer src="js/missions.js">
+</script>
+<script defer src="js/saveSystem.js">
+</script>
+<script defer src="js/audio.js">
+</script>
+<script defer src="js/mobileControls.js">
+</script>
+<script defer src="js/ui.js">
+</script>
+<script defer src="js/game.js">
+</script>
+<script defer src="js/main.js">
+</script>
+</body>
+</html>

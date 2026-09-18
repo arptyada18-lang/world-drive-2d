@@ -1,0 +1,400 @@
+:root {
+  color-scheme:dark;
+  --accent:#c6f36b;
+  --glass:#12262dee;
+  --button:62px
+}
+* {
+  box-sizing:border-box
+}
+html,body {
+  margin:0;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  overscroll-behavior:none;
+  background:#14252a;
+  color:#ecf4eb;
+  font-family:Arial,sans-serif
+}
+#game {
+  display:block;
+  width:100%;
+  height:100%;
+  touch-action:none
+}
+button,select,input {
+  font:inherit
+}
+button {
+  cursor:pointer;
+  border:1px solid #76949666;
+  background:#203d45;
+  color:#f6fff5;
+  padding:12px 18px;
+  border-radius:12px;
+  min-height:44px
+}
+button:hover {
+  background:#35505a
+}
+button:disabled {
+  opacity:.45;
+  cursor:default
+}
+button:focus-visible,input:focus-visible,select:focus-visible {
+  outline:3px solid var(--accent);
+  outline-offset:3px
+}
+.primary {
+  background:var(--accent);
+  color:#16251a;
+  font-weight:bold
+}
+.primary:hover {
+  background:#d8ff9c
+}
+.pill {
+  background:var(--glass);
+  border:1px solid #7dada855;
+  border-radius:16px;
+  box-shadow:0 8px 24px #0003;
+  padding:14px 18px
+}
+#hud {
+  pointer-events:none;
+  position:fixed;
+  inset:0
+}
+#hud button {
+  pointer-events:auto
+}
+.top {
+  position:absolute;
+  top:max(14px,env(safe-area-inset-top));
+  left:16px;
+  right:16px;
+  display:flex;
+  justify-content:space-between;
+  gap:12px
+}
+.top small {
+  display:block;
+  color:#c0d1cc;
+  margin-top:6px
+}
+.tools {
+  display:flex;
+  gap:6px;
+  align-items:start
+}
+.mission {
+  position:absolute;
+  top:103px;
+  left:16px;
+  font-size:12px;
+  max-width:340px
+}
+.gauges {
+  position:absolute;
+  bottom:20px;
+  right:20px;
+  min-width:200px
+}
+.gauges strong {
+  font-size:48px;
+  letter-spacing:-3px;
+  margin-right:7px
+}
+.gauges>span {
+  color:#a9c1b5;
+  font-size:12px
+}
+#stats {
+  font-size:12px;
+  line-height:1.7;
+  margin-top:5px
+}
+#mini {
+  position:absolute;
+  bottom:20px;
+  left:20px;
+  border:3px solid #d2ecc277;
+  border-radius:50%;
+  background:#172c2e
+}
+dialog {
+  border:1px solid #678483;
+  border-radius:24px;
+  padding:25px;
+  background:#132830f5;
+  color:#eff7ef;
+  max-height:90dvh;
+  overflow:auto;
+  width:min(850px,94vw);
+  box-shadow:0 25px 90px #0008
+}
+dialog::backdrop {
+  background:#08131988
+}
+#menu {
+  width:min(660px,94vw);
+  text-align:center
+}
+.menu-inner {
+  padding:15px
+}
+.eyebrow {
+  letter-spacing:3px;
+  font-size:10px;
+  color:var(--accent)
+}
+h1 {
+  font-size:clamp(40px,8vw,74px);
+  line-height:.95;
+  letter-spacing:-4px;
+  margin:30px 0
+}
+h1 em {
+  color:var(--accent);
+  font-style:normal
+}
+#menu p {
+  line-height:1.7;
+  color:#adc2bf
+}
+#menu>.menu-inner>button {
+  display:block;
+  width:100%;
+  margin:10px 0
+}
+small {
+  font-size:11px
+}
+#menu small {
+  display:block;
+  margin-top:25px;
+  color:#b7c7be
+}
+.row {
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap
+}
+.row>* {
+  flex:1
+}
+header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px
+}
+header h2 {
+  font-size:24px
+}
+#panelBody {
+  font-size:14px;
+  line-height:1.6
+}
+#panelBody label {
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  align-items:center;
+  padding:12px 0;
+  border-bottom:1px solid #ffffff15
+}
+select {
+  padding:10px;
+  background:#1e3b43;
+  border:1px solid #69867d;
+  border-radius:8px;
+  color:white
+}
+#panelBody input[type=range] {
+  width:140px
+}
+.garage-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin:20px 0
+}
+.car-card {
+  background:#203740;
+  border:1px solid #58746b;
+  border-radius:12px;
+  padding:16px
+}
+.car-card h3 {
+  margin:0 0 8px
+}
+.car-card p {
+  font-size:12px;
+  margin:5px 0
+}
+.car-card button {
+  width:100%;
+  margin-top:10px
+}
+.car-card.selected {
+  border-color:var(--accent)
+}
+#worldmap {
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:12px
+}
+.muted {
+  color:#b2c8c1
+}
+#touch {
+  position:fixed;
+  bottom:max(20px,env(safe-area-inset-bottom));
+  left:16px;
+  right:16px;
+  justify-content:space-between;
+  align-items:end;
+  pointer-events:none;
+  touch-action:none
+}
+#touch:not([hidden]) {
+  display:flex
+}
+#touch button {
+  pointer-events:auto;
+  touch-action:none;
+  user-select:none;
+  -webkit-user-select:none;
+  width:min(var(--button), calc((100vw - 64px)/4));
+  height:min(var(--button), calc((100vw - 64px)/4));
+  padding:4px;
+  font-size:11px;
+  background:#16313ce6;
+  border:1px solid #adcec788
+}
+#touch button.active {
+  background:#c6f36b;
+  color:#153526
+}
+.steer,.pedals {
+  display:flex;
+  gap:7px
+}
+.pedals {
+  display:grid;
+  grid-template-columns:repeat(2,min(var(--button), calc((100vw - 64px)/4)))
+}
+#toast {
+  position:fixed;
+  top:35%;
+  left:50%;
+  transform:translateX(-50%);
+  border-radius:12px;
+  background:#132c2bf0;
+  color:var(--accent);
+  padding:16px 24px;
+  max-width:85vw;
+  text-align:center;
+  pointer-events:none;
+  opacity:0;
+  transition:opacity .2s
+}
+#toast.show {
+  opacity:1
+}
+#loading {
+  position:fixed;
+  inset:0;
+  display:grid;
+  place-content:center;
+  text-align:center;
+  gap:12px;
+  background:#142a30;
+  font-size:36px;
+  font-weight:bold
+}
+body.mobile .gauges {
+  bottom:175px;
+  right:12px;
+  min-width:160px;
+  padding:10px
+}
+body.mobile #mini {
+  bottom:165px;
+  left:12px;
+  width:105px;
+  height:105px
+}
+body.mobile .gauges strong {
+  font-size:32px
+}
+@media(max-width:650px) {
+  .top {
+  left:10px;
+  right:10px
+}
+.top .pill {
+  padding:10px;
+  font-size:12px
+}
+.tools button {
+  font-size:10px;
+  padding:8px
+}
+.mission {
+  top:88px;
+  font-size:10px;
+  left:10px;
+  max-width:270px;
+  padding:10px
+}
+.garage-grid {
+  grid-template-columns:1fr
+}
+dialog {
+  padding:18px
+}
+#menu .row button {
+  padding:8px;
+  font-size:11px
+}
+
+}
+@media(max-height:480px) {
+  body.mobile .gauges {
+  bottom:125px;
+  padding:7px;
+  right:12px
+}
+body.mobile #mini {
+  bottom:125px;
+  width:75px;
+  height:75px
+}
+.mission {
+  top:80px
+}
+.menu-inner {
+  padding:0
+}
+h1 {
+  font-size:38px;
+  margin:10px
+}
+#menu p {
+  margin:8px
+}
+#menu small {
+  margin-top:10px
+}
+
+}
+
+
+[hidden] {
+  display:none!important
+}
+
